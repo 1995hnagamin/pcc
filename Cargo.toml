@@ -4,3 +4,5 @@ version = "0.1.0"
 authors = ["NAGAMINE Hideaki <1995.hnagamin@gmail.com>"]
 
 [dependencies]
+
+getopts = "0.2.4"
