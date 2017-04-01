@@ -20,7 +20,7 @@ pub enum Color {
 }
 
 pub enum Command {
-    Push(i32),
+    Push(u32),
     Pop,
     Add,
     Subtract,
