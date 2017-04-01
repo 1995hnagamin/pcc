@@ -6,6 +6,8 @@ use std::result;
 type ResultCodel = result::Result<bmp::Pixel, (u32, u32)>;
 
 fn get_codel(img: &bmp::Image, x: u32, y: u32, codel_size: u32) -> ResultCodel {
+    assert!(x * codel_size < img.get_width());
+    assert!(y * codel_size < img.get_height());
     let base = img.get_pixel(x * codel_size, y * codel_size);
     for x in x..(x + codel_size) {
         for y in y..(y + codel_size) {
