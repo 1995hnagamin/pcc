@@ -4,6 +4,7 @@ use getopts::Options;
 use std::env;
 
 mod bmpcode;
+mod piet;
 
 fn print_usage(program: &str, opts: Options) {
     let brief = format!("Usage: {} [options] FILE", program);
