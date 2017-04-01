@@ -6,4 +6,3 @@ authors = ["NAGAMINE Hideaki <1995.hnagamin@gmail.com>"]
 [dependencies]
 
 getopts = "0.2.4"
-lodepng = "0.11"
