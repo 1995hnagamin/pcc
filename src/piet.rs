@@ -6,3 +6,9 @@ pub enum Hue {
     Blue,
     Magenta,
 }
+
+pub enum Lightness {
+    Light,
+    Normal,
+    Dark,
+}
