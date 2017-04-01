@@ -12,3 +12,9 @@ pub enum Lightness {
     Normal,
     Dark,
 }
+
+pub enum Color {
+    White,
+    Black,
+    Chromatic(Hue, Lightness),
+}
