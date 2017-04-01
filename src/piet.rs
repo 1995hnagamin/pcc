@@ -55,3 +55,12 @@ fn integer_of_hue(h: Hue) -> usize {
         Magenta => 5,
     }
 }
+
+fn integer_of_lightness(l: Lightness) -> usize {
+    use self::Lightness::*;
+    match l {
+        Light => 0,
+        Normal => 1,
+        Dark => 2,
+    }
+}
