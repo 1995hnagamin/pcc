@@ -3,6 +3,7 @@ extern crate getopts;
 use getopts::Options;
 use std::env;
 
+mod bmpcode;
 
 fn print_usage(program: &str, opts: Options) {
     let brief = format!("Usage: {} [options] FILE", program);
