@@ -5,4 +5,5 @@ authors = ["NAGAMINE Hideaki <1995.hnagamin@gmail.com>"]
 
 [dependencies]
 
+bmp = "0.2"
 getopts = "0.2.4"
