@@ -24,6 +24,7 @@ pub enum Color {
 
 #[derive(Clone, Copy)]
 pub enum Command {
+    Nop,
     Push(u32),
     Pop,
     Add,
