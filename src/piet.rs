@@ -43,3 +43,15 @@ pub enum Command {
     OutNumber,
     OutChar,
 }
+
+fn integer_of_hue(h: Hue) -> usize {
+    use self::Hue::*;
+    match h {
+        Red => 0,
+        Yellow => 1,
+        Green => 2,
+        Cyan => 3,
+        Blue => 4,
+        Magenta => 5,
+    }
+}
