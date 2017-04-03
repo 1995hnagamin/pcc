@@ -80,3 +80,27 @@ fn get_command_from_map(h: usize, l: usize, area: u32) -> Command {
                [InChar, OutNumber, OutChar]];
     map[h][l]
 }
+
+fn subtract_cyclically(dst: usize, src: usize, cycle: usize) -> usize {
+    assert!(dst < cycle);
+    assert!(src < cycle);
+    (cycle + dst - src) % cycle
+}
+
+pub fn get_command(src: Color, dst: Color) -> Command {
+    use self::Color::*;
+    match (src, dst) {
+        (Chromatic(sh, sl), Chromatic(dh, dl)) => {
+            let dh = integer_of_hue(dh);
+            let sh = integer_of_hue(sh);
+            let h = subtract_cyclically(dh, sh, HUE_CYCLE);
+
+            let dl = integer_of_lightness(dl);
+            let sl = integer_of_lightness(sl);
+            let l = subtract_cyclically(dl, sl, LIGHTNESS_CYCLE);
+
+            get_command_from_map(h, l, 0)
+        }
+        (_, _) => Command::Nop,
+    }
+}
