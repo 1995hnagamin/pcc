@@ -67,3 +67,16 @@ fn integer_of_lightness(l: Lightness) -> usize {
 
 const HUE_CYCLE: usize = 6;
 const LIGHTNESS_CYCLE: usize = 3;
+
+fn get_command_from_map(h: usize, l: usize, area: u32) -> Command {
+    assert!(h < HUE_CYCLE);
+    assert!(l < LIGHTNESS_CYCLE);
+    use self::Command::*;
+    let map = [[Nop, Push(area), Pop],
+               [Add, Subtract, Multiply],
+               [Divide, Mod, Not],
+               [Greater, Pointer, Switch],
+               [Duplicate, Roll, InNumber],
+               [InChar, OutNumber, OutChar]];
+    map[h][l]
+}
