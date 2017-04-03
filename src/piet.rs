@@ -64,3 +64,6 @@ fn integer_of_lightness(l: Lightness) -> usize {
         Dark => 2,
     }
 }
+
+const HUE_CYCLE: usize = 6;
+const LIGHTNESS_CYCLE: usize = 3;
