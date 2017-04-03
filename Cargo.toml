@@ -7,3 +7,4 @@ authors = ["NAGAMINE Hideaki <1995.hnagamin@gmail.com>"]
 
 bmp = "0.2"
 getopts = "0.2.4"
+petgraph = "0.4.4"
