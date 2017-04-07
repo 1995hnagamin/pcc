@@ -29,6 +29,10 @@ pub mod blockmap {
         fn index_of_integer(&self, n: usize) -> index {
             (n % self.width, n / self.width)
         }
+
+        pub fn find(&self, idx: index) -> index {
+            self.index_of_integer(self.tree.find(self.integer_of_index(idx)))
+        }
     }
 }
 
