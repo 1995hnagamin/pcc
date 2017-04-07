@@ -1,4 +1,5 @@
 extern crate getopts;
+extern crate petgraph;
 
 use getopts::Options;
 use std::env;
