@@ -44,8 +44,6 @@ pub enum Command {
     OutChar,
 }
 
-pub type Image = Vec<Vec<Color>>;
-
 fn integer_of_hue(h: Hue) -> usize {
     use self::Hue::*;
     match h {
