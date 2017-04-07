@@ -19,6 +19,10 @@ impl Image {
         self.image[x][y]
     }
 
+    pub fn is_inner(&self, x: usize, y: usize) -> bool {
+        x < self.width && y < self.height
+    }
+
     pub fn height(&self) -> usize {
         self.height
     }
