@@ -44,5 +44,20 @@ pub mod blockmap {
 
 fn make_block_map(img: &image::Image) -> blockmap::BlockMap {
     let mut map = blockmap::BlockMap::new(100, 100);
+    for x1 in 0..img.width() {
+        for y1 in 0..img.height() {
+            let dx = [0, 1];
+            let dy = [1, 0];
+            for i in 0..2 {
+                let (x2, y2) = (x1 + dx[i], y1 + dy[i]);
+                if !img.is_inner(x2, y2) {
+                    continue;
+                }
+                if img.at(x1, y1) == img.at(x2, y2) {
+                    let _ = map.union((x1, y1), (x2, y2));
+                }
+            }
+        }
+    }
     map
 }
