@@ -33,6 +33,12 @@ pub mod blockmap {
         pub fn find(&self, idx: index) -> index {
             self.index_of_integer(self.tree.find(self.integer_of_index(idx)))
         }
+
+        pub fn union(&mut self, x: index, y: index) -> bool {
+            let x = self.integer_of_index(x);
+            let y = self.integer_of_index(y);
+            self.tree.union(x, y)
+        }
     }
 }
 
