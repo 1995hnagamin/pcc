@@ -11,6 +11,8 @@ pub mod blockmap {
         tree: unionfind::UnionFind<usize>,
     }
 
+    pub type index = (usize, usize);
+
     impl BlockMap {
         pub fn new(width: usize, height: usize) -> BlockMap {
             BlockMap {
