@@ -21,6 +21,14 @@ pub mod blockmap {
                 tree: unionfind::UnionFind::<usize>::new(width * height),
             }
         }
+
+        fn integer_of_index(&self, (x, y): index) -> usize {
+            y * self.width + x
+        }
+
+        fn index_of_integer(&self, n: usize) -> index {
+            (n % self.width, n / self.width)
+        }
     }
 }
 
