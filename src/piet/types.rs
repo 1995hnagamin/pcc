@@ -1,4 +1,4 @@
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, PartialEq)]
 pub enum Hue {
     Red,
     Yellow,
@@ -8,21 +8,21 @@ pub enum Hue {
     Magenta,
 }
 
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, PartialEq)]
 pub enum Lightness {
     Light,
     Normal,
     Dark,
 }
 
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, PartialEq)]
 pub enum Color {
     White,
     Black,
     Chromatic(Hue, Lightness),
 }
 
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, PartialEq)]
 pub enum Command {
     Nop,
     Push(u32),
