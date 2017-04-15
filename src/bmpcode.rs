@@ -1,7 +1,8 @@
 extern crate bmp;
 
+use bmp;
+use piet::image;
 use std::result;
-
 
 type ResultCodel = result::Result<bmp::Pixel, (u32, u32)>;
 

@@ -1,9 +1,9 @@
 extern crate petgraph;
 
+use petgraph::unionfind;
 use piet::image;
 
 pub mod blockmap {
-    use petgraph::unionfind;
 
     pub struct BlockMap {
         width: usize,
