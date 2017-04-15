@@ -21,7 +21,7 @@ fn get_codel(img: &bmp::Image, x: u32, y: u32, codel_size: u32) -> ResultCodel {
     Ok(base)
 }
 
-fn make_matrix(img: &bmp::Image, codel_size: u32) {
+fn make_matrix(img: &bmp::Image, codel_size: u32) -> image::Image {
     let (width, height) = (img.get_width(), img.get_height());
     if (width % codel_size != 0) | (height % codel_size != 0) {
         panic!("Bad codel size: {} ({}x{})", codel_size, width, height);
@@ -39,6 +39,7 @@ fn make_matrix(img: &bmp::Image, codel_size: u32) {
                 .collect()
         })
         .collect();
+    image::Image::new(matrix)
 }
 
 pub fn read_code(file: &str, codel_size: u32) {
