@@ -21,6 +21,10 @@ fn get_codel(img: &bmp::Image, x: u32, y: u32, codel_size: u32) -> ResultCodel {
     Ok(base)
 }
 
+fn piet_color_of_bmp_pixel(pixel: bmp::Pixel) -> types::Color {
+    types::Color::White
+}
+
 fn make_matrix(img: &bmp::Image, codel_size: u32) -> image::Image {
     let (width, height) = (img.get_width(), img.get_height());
     if (width % codel_size != 0) | (height % codel_size != 0) {
