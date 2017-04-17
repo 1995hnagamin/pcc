@@ -41,7 +41,7 @@ fn make_matrix(img: &bmp::Image, codel_size: u32) -> image::Image {
     image::Image::new(matrix)
 }
 
-pub fn read_code(file: &str, codel_size: u32) {
+pub fn read_code(file: &str, codel_size: u32) -> image::Image {
     assert!(codel_size > 0);
     let img = bmp::open(file).unwrap_or_else(|e| {
                                                  panic!("Failed to open bmp file: {}", e);
@@ -50,4 +50,5 @@ pub fn read_code(file: &str, codel_size: u32) {
     if (width % codel_size != 0) | (height % codel_size != 0) {
         panic!("Bad codel size: {} ({}x{})", codel_size, width, height);
     };
+    make_matrix(file, codel_size)
 }
