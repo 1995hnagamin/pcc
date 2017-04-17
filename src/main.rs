@@ -4,6 +4,10 @@ mod bmpcode;
 use getopts::Options;
 use std::env;
 
+fn load_image(file: &str, codel_size: u32) {
+    let code = bmpcode::read_code(file, codel_size);
+}
+
 fn print_usage(program: &str, opts: Options) {
     let brief = format!("Usage: {} [options] FILE", program);
     print!("{}", opts.usage(&brief));
