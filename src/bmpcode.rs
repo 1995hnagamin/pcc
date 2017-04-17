@@ -1,6 +1,5 @@
 extern crate bmp;
 
-use bmp;
 use piet::image;
 use std::result;
 

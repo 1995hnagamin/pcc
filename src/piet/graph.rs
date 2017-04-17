@@ -1,14 +1,13 @@
 extern crate petgraph;
-
-use petgraph::unionfind;
 use piet::image;
 
 pub mod blockmap {
+    use petgraph::unionfind::UnionFind;
 
     pub struct BlockMap {
         width: usize,
         height: usize,
-        tree: unionfind::UnionFind<usize>,
+        tree: UnionFind<usize>,
     }
 
     pub type index = (usize, usize);
@@ -18,7 +17,7 @@ pub mod blockmap {
             BlockMap {
                 width: width,
                 height: height,
-                tree: unionfind::UnionFind::<usize>::new(width * height),
+                tree: UnionFind::<usize>::new(width * height),
             }
         }
 

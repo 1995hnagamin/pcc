@@ -1,5 +1,6 @@
 extern crate getopts;
 
+mod bmpcode;
 use getopts::Options;
 use std::env;
 
