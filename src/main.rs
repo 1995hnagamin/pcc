@@ -1,6 +1,7 @@
 extern crate getopts;
+extern crate pcc;
 
-mod bmpcode;
+use pcc::bmpcode;
 use getopts::Options;
 use std::env;
 

@@ -1,4 +1,4 @@
-use piet::types;
+use piet::types::Color;
 
 pub struct Image {
     width: usize,
